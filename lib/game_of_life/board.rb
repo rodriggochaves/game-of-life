@@ -21,7 +21,14 @@ module GameOfLife
     end
 
     def decide_cell_status cell
-      count_neighbors(cell) != 2 ? GameOfLife::Cell::DEAD : GameOfLife::Cell::ALIVE
+      case count_neighbors(cell)
+      when 0..1
+        GameOfLife::Cell::DEAD
+      when 2..3
+        GameOfLife::Cell::ALIVE
+      when 4...
+        GameOfLife::Cell::DEAD
+      end
     end
 
     def next_generation_status 
