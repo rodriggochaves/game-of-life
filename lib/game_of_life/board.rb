@@ -26,7 +26,7 @@ module GameOfLife
         GameOfLife::Cell::DEAD
       when 2..3
         GameOfLife::Cell::ALIVE
-      when 4...
+      when 4..8
         GameOfLife::Cell::DEAD
       end
     end
